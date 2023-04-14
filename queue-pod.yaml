@@ -1,0 +1,12 @@
+# This YAML file defines two Kubernetes Pod objects for deploying fleetman-queue
+apiVersion: v1                                 # Kubernetes API version
+kind: Pod                                       # Kind of Kubernetes object to create Pod
+metadata:                                      # Metadata for the Pod
+  name: queue                                # Name of the Pod
+  labels:                                      # Labels for the Pod
+    app: queue                             # Label for the application
+    release: "0"                               # Label for the release version
+spec:                                          # Specification for the Pod
+  containers:                                  # Containers for the Pod
+    - name: queue                             # Name of the container
+      image: richardchesterwood/k8s-fleetman-queue:release1   # Image to use for the container

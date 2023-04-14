@@ -1,0 +1,13 @@
+# This YAML file defines a Kubernetes Service object for exposing the queue-pod 
+apiVersion: v1                                 # Kubernetes API version
+kind: Service                                   # Kind of Kubernetes object to create service
+metadata:                                      # Metadata for the Service
+  name: fleetman-queue                        # Name of the Service
+spec:                                          # Specification for the Service
+  selector:                                    # Label selector for the Service
+    app: queue                                # Selector for the application
+  ports:                                       # Ports to expose on the Service
+    - name: http                               # Name of the port
+      port: 8161                                 # Port number to expose for apache active mq
+      nodePort: 30010                          # Node port number to use
+  type: NodePort                               # Type of Service to create
